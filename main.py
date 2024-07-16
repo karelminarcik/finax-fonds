@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import csv
 from datetime import datetime
 
-list_of_fonds = ["SXR8:GR", "SPY4:GR", "ZPRR:GR"]
+list_of_fonds = ["SXR8:GR", "SPY4:GR", "ZPRR:GR", "IS3N:GR", "XSX6:GR", "XXSC:GR"]
 
 current_date = datetime.now().date()
 current_date_str = current_date.strftime("%d-%m-%Y")
@@ -32,9 +32,9 @@ for fond in list_of_fonds:
         # Write the data to a CSV file
         csv_filename = f"{fond}.csv"
         csv_filename = csv_filename.replace(":", "_")
-        with open(csv_filename, "w", newline='') as data:
+        with open(csv_filename, "a", newline='') as data:
             writer = csv.writer(data)
-            # writer.writerow(["Datum", "Vykonnost fondu"]) not needed anymore
+            # writer.writerow(["Datum", "Vykonnost fondu"]) #not needed anymore
             writer.writerow([current_date_str, fond_value])
         print(f"Data written to {csv_filename}")
     
