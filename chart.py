@@ -67,4 +67,4 @@ def plot_line_chart(file):
     plt.show()
 
 # Example usage
-plot_line_chart('./sxr8_GR.csv')
+plot_line_chart('./SXR8_GR.csv')
